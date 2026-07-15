@@ -49,9 +49,7 @@ export function Navbar({ translations: initialTranslations }: NavbarProps) {
   }, []);
 
   const nt = (path: string): string => resolveTranslation(path, translations);
-  const isDashboard =
-    typeof window !== "undefined" &&
-    window.location.pathname === ROUTES.dashboard;
+  const isDashboard = typeof window !== "undefined" && window.location.pathname === ROUTES.dashboard;
 
   useEffect(() => {
     setPortalMounted(true);
