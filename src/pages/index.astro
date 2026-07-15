@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { LandingHero, LandingFeatures } from "@modules/landing";
+import { ImportFlow } from "@modules/import-transactions";
+import { Navbar } from "@modules/navigation";
+---
+
+<Layout locale="en" title="Open Money Tracker">
+  <Navbar client:only="react" />
+
+  <main class="relative min-h-screen overflow-x-hidden">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 bg-om-radial"></div>
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 bg-om-grid opacity-60"></div>
+    <div
+      aria-hidden="true"
+      class="bg-om-blob pointer-events-none fixed -top-32 -left-32 -z-10 h-80 w-80 rounded-full opacity-50 blur-3xl"
+    ></div>
+    <div
+      aria-hidden="true"
+      class="bg-om-blob pointer-events-none fixed -right-32 -bottom-32 -z-10 h-96 w-96 rounded-full opacity-40 blur-3xl"
+    ></div>
+
+    <LandingHero client:only="react" />
+
+    <section class="relative px-4 pb-12">
+      <ImportFlow client:only="react" />
+    </section>
+
+    <LandingFeatures client:only="react" />
+  </main>
+</Layout>

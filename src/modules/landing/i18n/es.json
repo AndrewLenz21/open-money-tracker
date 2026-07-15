@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Open Money Tracker",
+    "nav": {
+      "dashboard": "Panel"
+    }
+  },
+  "hero": {
+    "badge": "100% local · Sin registro",
+    "title": "Finanzas personales con privacidad",
+    "subtitle": "Controla tus gastos localmente. Sin cuentas, sin nube, tus datos en tu dispositivo.",
+    "cta": "Comenzar"
+  },
+  "features": {
+    "eyebrow": "POR QUÉ FUNCIONA",
+    "title": "Funcionalidades",
+    "subtitle": "Todo lo que necesitas para entender tus finanzas, sin renunciar a tu privacidad.",
+    "privacyBadge": "Privacidad primero",
+    "privacy": {
+      "title": "100% Local",
+      "description": "Todos los datos permanecen en tu navegador. Sin servidor, sin nube, sin rastreo."
+    },
+    "revolut": {
+      "title": "Importar CSV bancario",
+      "description": "Añade el CSV de tu extracto bancario para análisis local instantáneo."
+    },
+    "insights": {
+      "title": "Análisis claro",
+      "description": "Ingresos, gastos, flujo de caja y tendencias de saldo de un vistazo."
+    },
+    "openSource": {
+      "title": "Código abierto",
+      "description": "Licencia MIT. Gratis para siempre. Contribuye en GitHub."
+    }
+  },
+  "footer": {
+    "openSource": "Open Source",
+    "privacy": "Privacidad ante todo. Ningún dato sale de tu dispositivo."
+  }
+}

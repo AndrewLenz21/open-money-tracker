@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Open Money Tracker",
+    "nav": {
+      "dashboard": "Dashboard"
+    }
+  },
+  "hero": {
+    "badge": "100% local · No account required",
+    "title": "Privacy-first personal finance",
+    "subtitle": "Track your spending locally. No accounts, no cloud, your data stays on your device.",
+    "cta": "Get started"
+  },
+  "features": {
+    "eyebrow": "WHY IT WORKS",
+    "title": "Features",
+    "subtitle": "Everything you need to understand your finances, without giving up your privacy.",
+    "privacyBadge": "Privacy first",
+    "privacy": {
+      "title": "100% Local",
+      "description": "All data stays in your browser. No server, no cloud, no tracking."
+    },
+    "revolut": {
+      "title": "Bank CSV Import",
+      "description": "Add your bank statement CSV for instant local analysis."
+    },
+    "insights": {
+      "title": "Clear Insights",
+      "description": "Income, expenses, cash flow, and balance trends at a glance."
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "MIT licensed. Free forever. Contribute on GitHub."
+    }
+  },
+  "footer": {
+    "openSource": "Open Source",
+    "privacy": "Privacy-first. No data leaves your device."
+  }
+}

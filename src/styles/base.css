@@ -1,0 +1,544 @@
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--muted-foreground) 32%, transparent) transparent;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--muted-foreground) 32%, transparent) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: content-box;
+    background-color: color-mix(in oklch, var(--muted-foreground) 26%, transparent);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in oklch, var(--muted-foreground) 46%, transparent);
+  }
+
+  .scrollarea {
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html,
+    body {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke;
+      transition-duration: var(--theme-transition-duration);
+      transition-timing-function: var(--theme-transition-ease);
+    }
+  }
+
+  html.sky body {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0.94 0.02 235),
+      oklch(0.98 0.01 235)
+    );
+    background-attachment: fixed;
+  }
+
+  html.ocean body {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0.91 0.05 195),
+      oklch(0.96 0.03 195)
+    );
+    background-attachment: fixed;
+  }
+
+  html.pink body {
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% 0%, oklch(0.9 0.04 350 / 0.4), transparent 70%),
+      radial-gradient(ellipse 50% 30% at 80% 70%, oklch(0.92 0.035 10 / 0.25), transparent 60%),
+      radial-gradient(ellipse 40% 25% at 20% 60%, oklch(0.91 0.03 340 / 0.22), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  .atmospheric-fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    pointer-events: none;
+    z-index: 40;
+    background: var(--background);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 22%,
+      black 40%,
+      transparent 85%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 22%,
+      black 40%,
+      transparent 85%
+    );
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 18s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+    .animate-slide-up {
+      animation: none;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.25s ease-out;
+  }
+
+  @keyframes drawer-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes drawer-out {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes drawer-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes drawer-out-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-drawer-in {
+    animation: drawer-in 0.25s ease-out;
+  }
+
+  .animate-drawer-out {
+    animation: drawer-out 0.2s ease-in;
+  }
+
+  .animate-drawer-in-left {
+    animation: drawer-in-left 0.25s ease-out;
+  }
+
+  .animate-drawer-out-left {
+    animation: drawer-out-left 0.2s ease-in;
+  }
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-modal-in {
+    animation: modal-in 0.2s ease-out;
+  }
+
+  /* -- Entrance animations (used by Astro-static sections and React islands) -- */
+
+  @keyframes om-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes om-fade-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes om-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes om-icon-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  @keyframes om-bar-grow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  .anim-fade-up {
+    animation: om-fade-up 0.6s var(--theme-transition-ease) both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+
+  .anim-fade-down {
+    animation: om-fade-down 0.5s var(--theme-transition-ease) both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+
+  .anim-fade-in {
+    animation: om-fade-in 0.6s ease-out both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+
+  .anim-icon-bob {
+    animation: om-icon-bob 2.4s ease-in-out infinite;
+  }
+
+  .anim-bar-grow {
+    transform-origin: bottom;
+    animation: om-bar-grow 0.7s var(--theme-transition-ease) both;
+    animation-delay: var(--bar-delay, 0ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anim-fade-up,
+    .anim-fade-down,
+    .anim-fade-in,
+    .anim-icon-bob,
+    .anim-bar-grow {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* -- Features section ---------------------------------------------------- */
+
+  .features-eyebrow {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    padding: 0.25rem 0.625rem;
+    border: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--card) 60%, transparent);
+  }
+
+  .features-subtitle {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--muted-foreground);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Shared card shell — softer border + tinted gradient + ambient shadow. */
+  .feature-card {
+    position: relative;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in oklch, var(--border) 80%, transparent);
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in oklch, var(--card) 92%, transparent) 0%,
+        color-mix(in oklch, var(--accent) 30%, var(--card)) 100%
+      );
+    box-shadow:
+      0 1px 0 0 color-mix(in oklch, var(--foreground) 3%, transparent) inset,
+      0 8px 24px -16px color-mix(in oklch, var(--foreground) 18%, transparent);
+    transition:
+      transform 240ms var(--theme-transition-ease),
+      border-color 240ms var(--theme-transition-ease),
+      box-shadow 240ms var(--theme-transition-ease);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Subtle decorative gradient that varies per card to avoid repetition. */
+  .feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 80% at 50% 0%,
+      var(--feature-card-glow, transparent) 0%,
+      transparent 55%
+    );
+    opacity: 0.55;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in oklch, var(--border) 50%, var(--foreground) 18%);
+    box-shadow:
+      0 1px 0 0 color-mix(in oklch, var(--foreground) 5%, transparent) inset,
+      0 18px 40px -20px color-mix(in oklch, var(--foreground) 28%, transparent);
+  }
+
+  /* Privacy emphasis — slightly stronger green-tinted border + soft glow. */
+  .feature-card--privacy {
+    --feature-card-glow: color-mix(in oklch, oklch(0.72 0.16 150) 18%, transparent);
+    border-color: color-mix(in oklch, oklch(0.72 0.16 150) 28%, var(--border));
+  }
+
+  .feature-card--privacy:hover {
+    border-color: color-mix(in oklch, oklch(0.72 0.16 150) 45%, var(--border));
+  }
+
+  /* Per-card variation — different glow positions so the grid doesn't feel mechanical. */
+  .feature-card--variant-a { --feature-card-glow: color-mix(in oklch, oklch(0.72 0.16 150) 16%, transparent); }
+  .feature-card--variant-b { --feature-card-glow: color-mix(in oklch, oklch(0.65 0.14 230) 16%, transparent); }
+  .feature-card--variant-c { --feature-card-glow: color-mix(in oklch, oklch(0.6 0.15 295) 16%, transparent); }
+  .feature-card--variant-d { --feature-card-glow: color-mix(in oklch, oklch(0.78 0.14 75) 16%, transparent); }
+
+  /* Icon container — slightly larger, monochrome with a per-card accent. */
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    border: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+    background: color-mix(in oklch, var(--feature-icon-bg, var(--background)) 70%, transparent);
+    color: var(--feature-icon-fg, var(--foreground));
+    margin-bottom: 1.25rem;
+    transition:
+      transform 240ms var(--theme-transition-ease),
+      background 240ms var(--theme-transition-ease),
+      border-color 240ms var(--theme-transition-ease);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.05);
+  }
+
+  .feature-icon svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    stroke-width: 1.75;
+  }
+
+  /* Per-card accent tints (extremely low opacity). */
+  .feature-icon--privacy {
+    --feature-icon-bg: oklch(0.95 0.05 150);
+    --feature-icon-fg: oklch(0.45 0.13 150);
+  }
+  .feature-icon--import {
+    --feature-icon-bg: oklch(0.95 0.05 230);
+    --feature-icon-fg: oklch(0.45 0.13 230);
+  }
+  .feature-icon--insights {
+    --feature-icon-bg: oklch(0.95 0.05 295);
+    --feature-icon-fg: oklch(0.45 0.13 295);
+  }
+  .feature-icon--oss {
+    --feature-icon-bg: oklch(0.96 0.06 75);
+    --feature-icon-fg: oklch(0.5 0.13 75);
+  }
+
+  /* Dark-mode friendly — the OKLCH colors above already auto-adapt; this
+     rule ensures a slightly stronger fill behind the icon in dark themes. */
+  .dark .feature-icon--privacy { --feature-icon-bg: oklch(0.32 0.05 150); }
+  .dark .feature-icon--import  { --feature-icon-bg: oklch(0.32 0.05 230); }
+  .dark .feature-icon--insights{ --feature-icon-bg: oklch(0.32 0.05 295); }
+  .dark .feature-icon--oss     { --feature-icon-bg: oklch(0.32 0.05 75);  }
+
+  /* Card title + description hierarchy. */
+  .feature-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+    letter-spacing: -0.005em;
+  }
+
+  .feature-description {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+  }
+
+  /* Optional "Privacy first" badge. */
+  .feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: oklch(0.4 0.12 150);
+    background: color-mix(in oklch, oklch(0.72 0.16 150) 14%, transparent);
+    border: 1px solid color-mix(in oklch, oklch(0.72 0.16 150) 28%, transparent);
+    border-radius: 999px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .dark .feature-badge {
+    color: oklch(0.78 0.13 150);
+  }
+
+  /* Respect reduced-motion: disable lift + icon scale on hover. */
+  @media (prefers-reduced-motion: reduce) {
+    .feature-card,
+    .feature-icon {
+      transition: none !important;
+    }
+    .feature-card:hover,
+    .feature-card:hover .feature-icon {
+      transform: none !important;
+    }
+  }
+
+  /* -- Background depth utilities (theme-aware) -- */
+
+  .bg-om-radial {
+    background-image: radial-gradient(
+      ellipse 70% 50% at 50% 0%,
+      color-mix(in oklch, var(--primary) 6%, transparent),
+      transparent 70%
+    );
+  }
+
+  .bg-om-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, black 0%, transparent 75%);
+  }
+
+  .bg-om-blob {
+    background: radial-gradient(
+      circle,
+      color-mix(in oklch, var(--primary) 10%, transparent),
+      transparent 70%
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+    .animate-slide-up {
+      animation: none;
+    }
+    .animate-drawer-in {
+      animation: none;
+    }
+    .animate-drawer-out {
+      animation: none;
+    }
+    .animate-drawer-in-left {
+      animation: none;
+    }
+    .animate-drawer-out-left {
+      animation: none;
+    }
+    .animate-modal-in {
+      animation: none;
+    }
+  }
+}

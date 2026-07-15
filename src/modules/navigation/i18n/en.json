@@ -1,0 +1,63 @@
+{
+  "header": {
+    "title": "Open Money Tracker",
+    "nav": {
+      "dashboard": "Dashboard"
+    }
+  },
+  "navbar": {
+    "mainAria": "Main navigation",
+    "brandAria": "Go to home page",
+    "dashboardAria": "Go to dashboard"
+  },
+  "language": {
+    "label": "Language",
+    "selectLanguage": "Select language",
+    "description": "Choose the language used by the application",
+    "locales": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "theme": {
+    "label": "Theme",
+    "changeTheme": "Change theme",
+    "selectTheme": "Select theme",
+    "description": "Select the visual style of the application",
+    "light": {
+      "name": "Light",
+      "description": "Clean and bright"
+    },
+    "dark": {
+      "name": "Dark",
+      "description": "Deep neutral contrast"
+    },
+    "sky": {
+      "name": "Sky",
+      "description": "Bright and clean"
+    },
+    "ocean": {
+      "name": "Ocean",
+      "description": "Calm blue tones"
+    },
+    "atom": {
+      "name": "Atom",
+      "description": "Developer-inspired"
+    },
+    "pink": {
+      "name": "Pink",
+      "description": "Warm rose tones"
+    }
+  },
+  "mobile": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "closeDialog": "Close dialog",
+    "navigationSection": "Navigation",
+    "preferencesSection": "Preferences"
+  },
+  "sidebar": {
+    "showToggle": "Show imports panel",
+    "hideToggle": "Hide imports panel"
+  }
+}

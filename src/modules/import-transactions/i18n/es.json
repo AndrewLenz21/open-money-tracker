@@ -1,0 +1,133 @@
+{
+  "provider": {
+    "label": "Proveedor compatible",
+    "revolut": "Revolut"
+  },
+  "providers": {
+    "label": "Origen CSV",
+    "helper": "Selecciona el proveedor que generó tu archivo CSV.",
+    "revolut": "Revolut",
+    "revolutDescription": "CSV de extracto de cuenta Revolut",
+    "n26": "N26",
+    "n26Description": "CSV de extracto de cuenta N26",
+    "intesa": "Intesa Sanpaolo",
+    "intesaDescription": "CSV de extracto bancario",
+    "generic": "CSV genérico",
+    "genericDescription": "Configura y asigna tus propias columnas",
+    "more": "Más opciones próximamente",
+    "active": "Activo",
+    "available": "Disponible",
+    "comingSoon": "Próximamente",
+    "planned": "Planeado"
+  },
+  "dropzone": {
+    "title": "Sube tu CSV de Revolut",
+    "dragActive": "Suelta tu archivo CSV aquí",
+    "dragInactive": "Arrastra tu archivo CSV aquí o haz clic para buscar",
+    "fileSelected": "Archivo seleccionado",
+    "supportedFormats": "Solo se aceptan archivos .csv",
+    "privacyNote": "Tus datos permanecen en tu dispositivo. No se sube nada a ningún servidor."
+  },
+  "dateFormat": {
+    "label": "Formato de fecha",
+    "description": "Selecciona el formato de fecha usado en tu archivo CSV. Esto es necesario porque fechas como 5/1/2026 pueden ser ambiguas.",
+    "choose": "Elige un formato",
+    "ddmmyyyy": "DD/MM/AAAA",
+    "mmddyyyy": "MM/DD/AAAA",
+    "yyyymmdd": "AAAA-MM-DD",
+    "example_ddmmyyyy": "ej. 31/05/2026",
+    "example_mmddyyyy": "ej. 05/31/2026",
+    "example_yyyymmdd": "ej. 2026-05-31"
+  },
+  "importFlow": {
+    "step1": {
+      "label": "Añadir CSV",
+      "title": "Añade el CSV de tu extracto bancario",
+      "description": "Arrastra el CSV de tu extracto bancario al área inferior."
+    },
+    "step2": {
+      "label": "Formato fecha",
+      "title": "Vista previa de transacciones",
+      "description": "Revisa las transacciones detectadas antes de importarlas."
+    },
+    "step3": {
+      "label": "Ver resultados",
+      "title": "Importar localmente",
+      "description": "Guardaremos tus transacciones localmente y abriremos el panel."
+    }
+  },
+  "preview": {
+    "title": "Vista previa de fechas",
+    "description": "Confirma que las fechas interpretadas son correctas antes de importar.",
+    "originalDate": "Original",
+    "interpretedDate": "Interpretada",
+    "confirm": "Confirmar e importar",
+    "continue": "Ver resultados",
+    "back": "Cambiar formato",
+    "detected": "Detectado automáticamente",
+    "selectionRequired": "Selección requerida",
+    "unavailable": "No se pudo detectar",
+    "detectedFrom": "Detectado desde",
+    "previewLabel": "Vista previa",
+    "validFormat": "Formato válido",
+    "invalidFormat": "Formato inválido",
+    "unableToParse": "No se pudo interpretar la fecha",
+    "originalValue": "Valor original",
+    "detectedColumn": "Columna detectada",
+    "noDateColumn": "No se detectó una columna de fecha",
+    "emptyDateValue": "No se encontró un valor de fecha utilizable",
+    "formatMismatch": "Este formato no coincide con el valor de fecha del CSV.",
+    "impossibleDate": "El CSV contiene una fecha imposible.",
+    "sourceHasNoDateColumns": "Esta fuente CSV no define columnas de fecha.",
+    "detectedColumnEmpty": "La columna de fecha detectada no tiene valores no vacíos.",
+    "noConfiguredDateColumn": "No pudimos encontrar una columna de fecha configurada en este CSV.",
+    "ambiguous": "Encontramos la fecha",
+    "ambiguousQuestion": "¿Qué formato usa tu CSV?",
+    "allInvalid": "No se pudieron interpretar fechas con el formato seleccionado. Prueba otro formato.",
+    "noTransactions": "No se encontraron transacciones válidas en el archivo."
+  },
+  "transactionPreview": {
+    "title": "Vista previa de tus transacciones",
+    "description": "Verifica los datos detectados antes de importarlos localmente.",
+    "showing": "Mostrando {shown} de {total} transacciones",
+    "dateRange": "Rango de fechas",
+    "currencies": "Divisas",
+    "transactions": "Transacciones",
+    "continue": "Continuar e importar",
+    "replace": "Reemplazar archivo",
+    "category": "Categoría",
+    "uncategorized": "Por revisar"
+  },
+  "demoPreview": {
+    "title": "Mira cómo se verán tus datos",
+    "description": "Previsualiza, revisa y categoriza tus transacciones antes de importarlas."
+  },
+  "success": {
+    "title": "Importación exitosa",
+    "rowsAccepted": "filas aceptadas",
+    "viewDashboard": "Ver panel"
+  },
+  "error": {
+    "title": "Error en la importación",
+    "generic": "Algo salió mal al leer el archivo.",
+    "tryAgain": "Intentar de nuevo"
+  },
+  "validation": {
+    "success": "Importación exitosa",
+    "error": "Error en la importación",
+    "rowsAccepted": "filas aceptadas",
+    "rowsRejected": "filas rechazadas",
+    "warnings": "avisos",
+    "viewDashboard": "Ver panel"
+  },
+  "demo": {
+    "label": "Probar con datos de demo",
+    "description": "Explora el panel con datos de ejemplo de Revolut."
+  },
+  "errors": {
+    "missingColumns": "Faltan columnas obligatorias",
+    "invalidCsv": "No se pudo procesar el archivo CSV",
+    "noTransactions": "No se encontraron transacciones válidas"
+  },
+  "privacyNote": "Tus datos permanecen en tu dispositivo. No se sube nada a ningún servidor."
+}

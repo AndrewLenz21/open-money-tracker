@@ -1,0 +1,197 @@
+@layer base {
+  .page-background {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+  }
+
+  .page-background::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90vw, 1200px);
+    height: 75%;
+    background: radial-gradient(
+      ellipse 75% 55% at 50% 0%,
+      var(--background-accent-primary),
+      transparent 65%
+    );
+    opacity: var(--background-glow-opacity);
+  }
+
+  .page-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 80% 20%,
+        var(--background-accent-secondary),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 50% 50% at 15% 30%,
+        var(--background-accent-primary),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 60% 55% at 22% 78%,
+        var(--background-accent-primary),
+        transparent 70%
+      );
+    opacity: var(--background-shape-opacity);
+    filter: blur(80px);
+  }
+
+  .finance-pattern {
+    position: absolute;
+    inset: 0;
+  }
+
+  .finance-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle,
+      var(--background-grid-color) 1px,
+      transparent 1px
+    );
+    background-size: 52px 52px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 55% at 50% 35%,
+      black 25%,
+      transparent 70%
+    );
+    mask-image: radial-gradient(
+      ellipse 70% 55% at 50% 35%,
+      black 25%,
+      transparent 70%
+    );
+  }
+
+  .finance-chart-right {
+    position: absolute;
+    bottom: 6%;
+    right: 4%;
+    width: 40%;
+    height: 38%;
+    opacity: var(--background-shape-opacity);
+  }
+
+  .finance-chart-left {
+    position: absolute;
+    top: 55%;
+    left: 3%;
+    width: 32%;
+    height: 30%;
+    opacity: calc(var(--background-shape-opacity) * 0.7);
+  }
+
+  /* -- Features section decoration ----------------------------------------
+     Pure CSS finance motifs: a smooth line chart, vertical bars, and a
+     dotted grid. All sit behind the cards (z-index -1).
+
+     The decorative SVG is intentionally wider than the viewport
+     (`max(120vw, 1800px)`) and centered with `left: 50% + translateX(-50%)`
+     so its left/right edges extend past the screen. The section uses
+     `overflow: clip` to prevent horizontal page scroll, making the line
+     chart feel like a continuous oversized abstract curve.
+
+     The ambient gray wash behind the section is a soft radial gradient
+     rendered on `.features-section::before`. It extends above and well
+     below the visible content and fades to fully transparent before any
+     edge, so there is no visible perimeter, pill, or rounded boundary. */
+
+  .features-section {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+  }
+
+  /* Ambient wash — a soft, oversized radial gradient that fades into the
+     page background. Sits behind everything in the section. */
+  .features-section::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max(120vw, 1800px);
+    height: calc(100% + 360px);
+    pointer-events: none;
+    z-index: -2;
+    background: radial-gradient(
+      ellipse 60% 55% at 50% 30%,
+      color-mix(in oklch, var(--foreground) 6%, transparent) 0%,
+      color-mix(in oklch, var(--foreground) 3.5%, transparent) 35%,
+      color-mix(in oklch, var(--foreground) 1.4%, transparent) 60%,
+      transparent 85%
+    );
+  }
+
+  .features-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max(120vw, 1800px);
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    opacity: var(--background-shape-opacity);
+  }
+
+  .features-container {
+    position: relative;
+  }
+
+  .features-background svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .features-background .deco-line {
+    fill: none;
+    stroke: var(--foreground);
+    stroke-width: 1.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.18;
+  }
+
+  .features-background .deco-line-soft {
+    opacity: 0.10;
+  }
+
+  .features-background .deco-bar {
+    fill: var(--foreground);
+    opacity: 0.08;
+  }
+
+  .features-background .deco-dot {
+    fill: var(--foreground);
+    opacity: 0.10;
+  }
+
+  /* Hide the densest decorations on small screens to keep the section calm. */
+  @media (max-width: 640px) {
+    .features-background .deco-bars,
+    .features-background .deco-dots {
+      display: none;
+    }
+    .features-background {
+      opacity: calc(var(--background-shape-opacity) * 0.6);
+    }
+    .features-section::before {
+      width: 140vw;
+      height: calc(100% + 300px);
+    }
+  }
+}

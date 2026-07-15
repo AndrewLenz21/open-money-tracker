@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+
+const ICON_PATHS: Record<string, string> = {
+  lock: "M6 10V8a6 6 0 1 1 12 0v2 M5 10h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z",
+  upload: "M12 3v13 M7 8l5-5 5 5 M5 21h14",
+  chart: "M4 20V10 M10 20V4 M16 20v-7 M22 20H2",
+  code: "M9 8l-5 4 5 4 M15 8l5 4-5 4 M14 4l-4 16",
+  sparkles: "M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z",
+};
+
+const d = ICON_PATHS[icon] ?? ICON_PATHS.sparkles;
+---
+
+<div
+  class="group h-full rounded-lg border border-border/60 bg-card/60 p-6 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+>
+  <div
+    class="mb-3 flex h-9 w-9 items-center justify-center rounded-md border border-border/60 bg-background/60 text-foreground/80 transition-all duration-200 group-hover:border-primary/40 group-hover:bg-primary/5 group-hover:text-primary"
+    aria-hidden="true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.75"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="h-4 w-4"
+    >
+      <path d={d}></path>
+    </svg>
+  </div>
+  <h3 class="mb-2 font-semibold">{title}</h3>
+  <p class="text-sm text-muted-foreground">{description}</p>
+</div>

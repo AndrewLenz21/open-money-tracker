@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Navbar } from "@modules/navigation";
+import { DashboardPage } from "@modules/dashboard";
+---
+
+<Layout locale="en" title="Dashboard - Open Money Tracker">
+  <Navbar client:only="react" />
+  <DashboardPage client:only="react" />
+</Layout>

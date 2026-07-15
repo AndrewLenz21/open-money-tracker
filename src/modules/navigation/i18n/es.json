@@ -1,0 +1,63 @@
+{
+  "header": {
+    "title": "Open Money Tracker",
+    "nav": {
+      "dashboard": "Panel"
+    }
+  },
+  "navbar": {
+    "mainAria": "Navegación principal",
+    "brandAria": "Ir a la página principal",
+    "dashboardAria": "Ir al panel"
+  },
+  "language": {
+    "label": "Idioma",
+    "selectLanguage": "Seleccionar idioma",
+    "description": "Elige el idioma utilizado por la aplicación",
+    "locales": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "theme": {
+    "label": "Tema",
+    "changeTheme": "Cambiar tema",
+    "selectTheme": "Seleccionar tema",
+    "description": "Selecciona el estilo visual de la aplicación",
+    "light": {
+      "name": "Light",
+      "description": "Claro y limpio"
+    },
+    "dark": {
+      "name": "Dark",
+      "description": "Neutro y profundo"
+    },
+    "sky": {
+      "name": "Sky",
+      "description": "Claro y luminoso"
+    },
+    "ocean": {
+      "name": "Ocean",
+      "description": "Tonos azules tranquilos"
+    },
+    "atom": {
+      "name": "Atom",
+      "description": "Inspirado en desarrollo"
+    },
+    "pink": {
+      "name": "Rosa",
+      "description": "Rosados c\u00e1lidos"
+    }
+  },
+  "mobile": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "closeDialog": "Cerrar diálogo",
+    "navigationSection": "Navegación",
+    "preferencesSection": "Preferencias"
+  },
+  "sidebar": {
+    "showToggle": "Mostrar panel de importaciones",
+    "hideToggle": "Ocultar panel de importaciones"
+  }
+}

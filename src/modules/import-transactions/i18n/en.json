@@ -1,0 +1,133 @@
+{
+  "provider": {
+    "label": "Supported Provider",
+    "revolut": "Revolut"
+  },
+  "providers": {
+    "label": "CSV source",
+    "helper": "Select the provider that generated your CSV file.",
+    "revolut": "Revolut",
+    "revolutDescription": "Revolut account statement CSV",
+    "n26": "N26",
+    "n26Description": "N26 account statement CSV",
+    "intesa": "Intesa Sanpaolo",
+    "intesaDescription": "Bank statement CSV",
+    "generic": "Generic CSV",
+    "genericDescription": "Configure and map your own columns",
+    "more": "More options coming soon",
+    "active": "Active",
+    "available": "Available",
+    "comingSoon": "Coming soon",
+    "planned": "Planned"
+  },
+  "dropzone": {
+    "title": "Upload your Revolut CSV",
+    "dragActive": "Drop your CSV file here",
+    "dragInactive": "Drag and drop your CSV file here, or click to browse",
+    "fileSelected": "Selected file",
+    "supportedFormats": "Only .csv files are accepted",
+    "privacyNote": "Your data stays on your device. Nothing is uploaded to any server."
+  },
+  "dateFormat": {
+    "label": "Date format",
+    "description": "Select the date format used in your CSV file. This is required because dates like 5/1/2026 can be ambiguous.",
+    "choose": "Choose a format",
+    "ddmmyyyy": "DD/MM/YYYY",
+    "mmddyyyy": "MM/DD/YYYY",
+    "yyyymmdd": "YYYY-MM-DD",
+    "example_ddmmyyyy": "e.g. 31/05/2026",
+    "example_mmddyyyy": "e.g. 05/31/2026",
+    "example_yyyymmdd": "e.g. 2026-05-31"
+  },
+  "importFlow": {
+    "step1": {
+      "label": "Add CSV",
+      "title": "Add your bank statement CSV",
+      "description": "Drag your bank statement CSV into the area below."
+    },
+    "step2": {
+      "label": "Date format",
+      "title": "Preview transactions",
+      "description": "Review the detected transactions before importing them."
+    },
+    "step3": {
+      "label": "View results",
+      "title": "Import locally",
+      "description": "We will save your transactions locally and open the dashboard."
+    }
+  },
+  "preview": {
+    "title": "Date Preview",
+    "description": "Confirm the parsed dates look correct before importing.",
+    "originalDate": "Original",
+    "interpretedDate": "Interpreted",
+    "confirm": "Confirm and Import",
+    "continue": "View results",
+    "back": "Change Format",
+    "detected": "Detected automatically",
+    "selectionRequired": "Selection required",
+    "unavailable": "Could not detect",
+    "detectedFrom": "Detected from",
+    "previewLabel": "Preview",
+    "validFormat": "Valid format",
+    "invalidFormat": "Invalid format",
+    "unableToParse": "Unable to parse date",
+    "originalValue": "Original value",
+    "detectedColumn": "Detected column",
+    "noDateColumn": "No date column detected",
+    "emptyDateValue": "No usable date value found",
+    "formatMismatch": "This format does not match the CSV date value.",
+    "impossibleDate": "The CSV contains an impossible date.",
+    "sourceHasNoDateColumns": "This CSV source does not define date columns.",
+    "detectedColumnEmpty": "The detected date column has no non-empty values.",
+    "noConfiguredDateColumn": "We couldn't find a configured date column in this CSV.",
+    "ambiguous": "We found the date",
+    "ambiguousQuestion": "Which format does your CSV use?",
+    "allInvalid": "No dates could be parsed with the selected format. Please try another format.",
+    "noTransactions": "No valid transactions found in the file"
+  },
+  "transactionPreview": {
+    "title": "Preview your transactions",
+    "description": "Verify the detected data before importing it locally.",
+    "showing": "Showing {shown} of {total} transactions",
+    "dateRange": "Date range",
+    "currencies": "Currencies",
+    "transactions": "Transactions",
+    "continue": "Continue to import",
+    "replace": "Replace file",
+    "category": "Category",
+    "uncategorized": "Needs review"
+  },
+  "demoPreview": {
+    "title": "See how your data will look",
+    "description": "Preview, review, and categorize your transactions before importing them."
+  },
+  "success": {
+    "title": "Import successful",
+    "rowsAccepted": "rows accepted",
+    "viewDashboard": "View Dashboard"
+  },
+  "error": {
+    "title": "Import failed",
+    "generic": "Something went wrong while reading the file.",
+    "tryAgain": "Try again"
+  },
+  "validation": {
+    "success": "Import successful",
+    "error": "Import failed",
+    "rowsAccepted": "rows accepted",
+    "rowsRejected": "rows rejected",
+    "warnings": "warnings",
+    "viewDashboard": "View Dashboard"
+  },
+  "demo": {
+    "label": "Try demo data",
+    "description": "Explore the dashboard with sample Revolut transaction data."
+  },
+  "errors": {
+    "missingColumns": "Missing required columns",
+    "invalidCsv": "Could not parse CSV file",
+    "noTransactions": "No valid transactions found in the file"
+  },
+  "privacyNote": "Your data stays on your device. Nothing is uploaded to any server."
+}
