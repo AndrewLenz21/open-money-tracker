@@ -24,9 +24,10 @@ import { resolveTranslation } from "@core/i18n";
 
 interface NavbarProps {
   translations?: Record<string, unknown>;
+  isDashboard?: boolean;
 }
 
-export function Navbar({ translations: initialTranslations }: NavbarProps) {
+export function Navbar({ translations: initialTranslations, isDashboard: propIsDashboard }: NavbarProps) {
   const { locale, mounted } = useAppLocale();
   const [portalMounted, setPortalMounted] = useState(false);
   const translations = mounted
@@ -49,7 +50,7 @@ export function Navbar({ translations: initialTranslations }: NavbarProps) {
   }, []);
 
   const nt = (path: string): string => resolveTranslation(path, translations);
-  const isDashboard = typeof window !== "undefined" && window.location.pathname === ROUTES.dashboard;
+  const isDashboard = propIsDashboard ?? (typeof window !== "undefined" && window.location.pathname === ROUTES.dashboard);
 
   useEffect(() => {
     setPortalMounted(true);
