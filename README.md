@@ -2,6 +2,12 @@
 
 Privacy-first, local-only personal finance tracker. Import your bank CSV exports and get instant financial analysis — entirely in your browser. No accounts, no cloud, no data leaves your device.
 
+<p align="center">
+  <a href="https://open-money-tracker.andrew-lenz.com" target="_blank">
+    <strong>open-money-tracker.andrew-lenz.com</strong>
+  </a>
+</p>
+
 ![Landing page](public/images/principal-landing.png)
 
 ## Features

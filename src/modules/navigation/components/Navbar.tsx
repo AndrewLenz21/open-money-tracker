@@ -27,7 +27,10 @@ interface NavbarProps {
   isDashboard?: boolean;
 }
 
-export function Navbar({ translations: initialTranslations, isDashboard: propIsDashboard }: NavbarProps) {
+export function Navbar({
+  translations: initialTranslations,
+  isDashboard: propIsDashboard,
+}: NavbarProps) {
   const { locale, mounted } = useAppLocale();
   const [portalMounted, setPortalMounted] = useState(false);
   const translations = mounted
@@ -37,7 +40,9 @@ export function Navbar({ translations: initialTranslations, isDashboard: propIsD
   const mobileImportsOpen = useDashboardStore((s) => s.mobileImportsOpen);
   const setMobileImportsOpen = useDashboardStore((s) => s.setMobileImportsOpen);
   const desktopSidebarOpen = useDashboardStore((s) => s.desktopSidebarOpen);
-  const setDesktopSidebarOpen = useDashboardStore((s) => s.setDesktopSidebarOpen);
+  const setDesktopSidebarOpen = useDashboardStore(
+    (s) => s.setDesktopSidebarOpen,
+  );
   const sidebarWidth = useDashboardStore((s) => s.sidebarWidth);
 
   const [isDesktop, setIsDesktop] = useState(false);
@@ -50,7 +55,10 @@ export function Navbar({ translations: initialTranslations, isDashboard: propIsD
   }, []);
 
   const nt = (path: string): string => resolveTranslation(path, translations);
-  const isDashboard = propIsDashboard ?? (typeof window !== "undefined" && window.location.pathname === ROUTES.dashboard);
+  const isDashboard =
+    propIsDashboard ??
+    (typeof window !== "undefined" &&
+      window.location.pathname === ROUTES.dashboard);
 
   useEffect(() => {
     setPortalMounted(true);
@@ -74,13 +82,14 @@ export function Navbar({ translations: initialTranslations, isDashboard: propIsD
 
   return (
     <header
-      className="sticky top-0 z-50 h-16 border-b backdrop-blur-2xl backdrop-saturate-150 transition-[margin] duration-[250ms] ease-out"
+      className="sticky top-0 z-50 h-16 border-b backdrop-blur-2xl backdrop-saturate-150 transition-[margin] duration-250 ease-out"
       style={{
         borderColor: "var(--nav-border, rgb(255 255 255 / 0.08))",
         background:
           "var(--nav-bg, linear-gradient(180deg, rgba(23,23,23,0.78) 0%, rgba(10,10,10,0.58) 100%))",
         boxShadow: "var(--nav-shadow, 0 16px 50px -22px rgba(0,0,0,0.95))",
-        marginLeft: isDashboard && isDesktop && desktopSidebarOpen ? sidebarWidth : 0,
+        marginLeft:
+          isDashboard && isDesktop && desktopSidebarOpen ? sidebarWidth : 0,
       }}
     >
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
@@ -91,9 +100,17 @@ export function Navbar({ translations: initialTranslations, isDashboard: propIsD
               type="button"
               onClick={() => setDesktopSidebarOpen(!desktopSidebarOpen)}
               className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-accent hover:text-foreground"
-              aria-label={desktopSidebarOpen ? "Close imports sidebar" : "Open imports sidebar"}
+              aria-label={
+                desktopSidebarOpen
+                  ? "Close imports sidebar"
+                  : "Open imports sidebar"
+              }
               aria-expanded={desktopSidebarOpen}
-              title={desktopSidebarOpen ? "Close imports sidebar" : "Open imports sidebar"}
+              title={
+                desktopSidebarOpen
+                  ? "Close imports sidebar"
+                  : "Open imports sidebar"
+              }
             >
               {desktopSidebarOpen ? (
                 <PanelLeftClose className="h-4 w-4" />
