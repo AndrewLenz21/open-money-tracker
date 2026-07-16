@@ -2,7 +2,7 @@
 
 Open Money Tracker processes financial data locally in your browser. While no data is transmitted to any server, we take security seriously. This document outlines our approach to security and how to report vulnerabilities.
 
-## Supported Versions
+## ✅ Supported Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -12,7 +12,7 @@ Open Money Tracker processes financial data locally in your browser. While no da
 
 We recommend always running the latest release. The application is distributed as a static site — updates are delivered when you refresh the page after a new deployment.
 
-## Reporting a Vulnerability
+## 🚨 Reporting a Vulnerability
 
 If you discover a security vulnerability, please report it privately — do not file a public issue.
 
@@ -30,7 +30,7 @@ If you discover a security vulnerability, please report it privately — do not 
    - **Impact:** What an attacker could achieve
    - **Suggested fix:** (optional) A proposed patch or mitigation
 
-## Responsible Disclosure
+## 🤫 Responsible Disclosure
 
 We ask that you:
 
@@ -45,7 +45,7 @@ In return, we will:
 - Keep you informed of progress toward a fix.
 - Credit you in the release notes (if you wish) once the vulnerability is resolved.
 
-## Expected Response Timeline
+## ⏱️ Expected Response Timeline
 
 | Event | Expected timeframe |
 | ----- | ------------------ |
@@ -55,7 +55,7 @@ In return, we will:
 | Fix for moderate issues | Within 30 days |
 | Public disclosure | After a fix is released |
 
-## Scope
+## 🎯 Scope
 
 The following are **in scope** for security reports:
 
@@ -73,7 +73,7 @@ The following are **out of scope**:
 - Issues in dependencies that are already patched in newer versions
 - Features intentionally designed as client-only (e.g., localStorage persistence)
 
-## Safe Harbor
+## 🛡️ Safe Harbor
 
 We will not pursue legal action against anyone who:
 
@@ -81,6 +81,6 @@ We will not pursue legal action against anyone who:
 - Engages in good-faith security research within the scope defined above
 - Does not cause harm or violate applicable law
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 Because this application processes financial data locally — transaction histories, balances, spending patterns — we treat security vulnerabilities with the same seriousness as server-side financial applications. We appreciate the community's help in keeping Open Money Tracker safe.

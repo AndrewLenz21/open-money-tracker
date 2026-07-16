@@ -1,10 +1,10 @@
-## Description
+## 📝 Description
 
 Please include a summary of the change and which issue is fixed. Explain the motivation and context of the change.
 
 Fixes #(issue)
 
-## Type of change
+## 🔄 Type of change
 
 - [ ] Bug fix (non-breaking change that fixes an issue)
 - [ ] New feature (non-breaking change that adds functionality)
@@ -15,7 +15,7 @@ Fixes #(issue)
 - [ ] Tests
 - [ ] Chore (dependency updates, build configuration, etc.)
 
-## Checklist
+## ✅ Checklist
 
 - [ ] I have read the [CONTRIBUTING](../blob/main/CONTRIBUTING.md) document.
 - [ ] My code follows the code style of this project.
@@ -24,7 +24,7 @@ Fixes #(issue)
 - [ ] I have checked for TypeScript errors (`npx astro check`).
 - [ ] The project builds successfully (`npm run build`).
 
-## Testing performed
+## 🧪 Testing performed
 
 Describe the testing you have performed to verify your changes:
 
@@ -32,13 +32,13 @@ Describe the testing you have performed to verify your changes:
 - [ ] Added/modified unit tests
 - [ ] Tested with sample data
 
-## Screenshots (if UI changes)
+## 📸 Screenshots (if UI changes)
 
 | Before | After |
 | ------ | ----- |
 |        |       |
 
-## Documentation updated?
+## 📚 Documentation updated?
 
 - [ ] README.md
 - [ ] CONTRIBUTING.md
@@ -46,6 +46,6 @@ Describe the testing you have performed to verify your changes:
 - [ ] Code comments
 - [ ] Other (please specify)
 
-## Additional notes
+## 💬 Additional notes
 
 Add any additional information that might be useful for reviewers.

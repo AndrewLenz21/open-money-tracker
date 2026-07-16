@@ -1,6 +1,6 @@
 # Roadmap
 
-## Completed
+## ✅ Completed
 
 - **Revolut CSV import** — Full parser, validation, date normalization
 - **Import flow** — Drag-and-drop upload, column detection, row-level validation
@@ -15,14 +15,14 @@
 - **Responsive design** — Mobile-first layout with drawer navigation
 - **Astro v7 + React 19** — Built on latest framework versions
 
-## In Progress
+## 🚧 In Progress
 
 - **N26 CSV parser** — Implementation for N26 (formerly Number26) bank exports
 - **Intesa Sanpaolo CSV parser** — Implementation for Italy's largest bank
 - **Generic CSV mapper** — Allow users to map their own CSV columns to the common transaction model
 - **Test infrastructure** — Install vitest, establish testing patterns, add tests for the Revolut parser
 
-## Planned
+## 📋 Planned
 
 - **Import/export** — Export transactions and categories as JSON for backup and migration
 - **Budgeting** — Set monthly budgets per category, track progress in the dashboard
@@ -34,7 +34,7 @@
 - **CSR/Category ratio visuals** — Additional dashboard visualizations
 - **Keyboard shortcuts** — Power user navigation without mouse
 
-## Future Ideas
+## 🔮 Future Ideas
 
 - **Mobile app** — Wrappers via Capacitor or Tauri for native mobile experience
 - **Plug-in architecture** — Third-party providers as separate packages loaded dynamically
@@ -53,7 +53,7 @@
 
 ---
 
-## How to Influence the Roadmap
+## 💡 How to Influence the Roadmap
 
 Open issues and upvote existing ones to signal what matters most to you. We prioritize based on:
 
