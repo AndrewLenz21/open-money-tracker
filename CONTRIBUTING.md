@@ -2,7 +2,7 @@
 
 First off, thank you for considering contributing. This project is built with the belief that personal finance should be private, local, and accessible to everyone — regardless of which country or bank they use.
 
-## Project Philosophy
+## 💭 Project Philosophy
 
 - **Privacy by design.** All data processing happens in the browser. No accounts, no servers, no telemetry.
 - **Local-first.** Your financial data never leaves your machine. The application works entirely offline once loaded.
@@ -10,7 +10,7 @@ First off, thank you for considering contributing. This project is built with th
 - **Progressive enhancement.** The app should work for everyone. Accessibility, i18n, and performance are features, not afterthoughts.
 - **Ship small, ship often.** Small focused PRs are easier to review, safer to merge, and more likely to be accepted.
 
-## Architecture Overview
+## 🏗️ Architecture Overview
 
 The project follows a **vertical-slice modular architecture**.
 
@@ -46,14 +46,14 @@ Each module contains its own:
 
 Modules communicate through **provider hooks** in `providers/` directories, keeping internal implementation hidden behind barrel exports (`index.ts`).
 
-## Development Setup
+## 🛠️ Development Setup
 
-### Prerequisites
+### 📋 Prerequisites
 
 - **Node.js** >= 22.12.0
 - **npm** (comes with Node.js)
 
-### Getting Started
+### 🚀 Getting Started
 
 ```bash
 # Clone the repository
@@ -79,7 +79,7 @@ npm run build
 npm run preview
 ```
 
-### Development Server
+### 🔧 Development Server
 
 We recommend running Astro in background mode during development:
 
@@ -95,44 +95,44 @@ astro dev status   # Check if the dev server is running
 astro dev logs     # View server logs
 ```
 
-## Coding Standards
+## 📐 Coding Standards
 
-### TypeScript
+### 📘 TypeScript
 
 - Strict mode is enabled. Avoid `any` — prefer `unknown` and type narrowing.
 - Use explicit return types on public functions.
 - Barrel exports in every module (`index.ts`).
 - Path aliases are configured: `@core`, `@modules`, `@shared`, `@styles`.
 
-### React Components
+### ⚛️ React Components
 
 - Prefer function components with hooks.
 - Use `shadcn/ui` primitives from `@shared/components/ui/` for consistency.
 - Components that require interactivity use `client:only="react"` in Astro pages.
 - Keep components focused; if a file exceeds 300 lines, consider splitting.
 
-### State Management
+### 🗄️ State Management
 
 - **Zustand** for all client state.
 - **IndexedDB** (`idb` library) for transactional data (imports, transactions).
 - **localStorage** for preferences and category data.
 - Stores should expose a `hydrate()` function for initialization on mount.
 
-### Styling
+### 🎨 Styling
 
 - **Tailwind CSS v4** for utility classes.
 - Theme colors are defined as CSS custom properties (OKLCH color space) in `src/styles/theme-tokens.css`.
 - Six themes are available: Dark, Light, Atom, Sky, Ocean, Pink.
 - Use the `cn()` utility (`@shared/lib/utils`) for conditional class merging.
 
-### i18n
+### 🌐 i18n
 
 - Each module has its own `i18n/{locale}.json` file.
 - English (`en`) is the default locale and serves as the fallback.
 - Use the `resolveTranslation()` pattern from `@core/i18n` for key lookup.
 - When adding a new locale, provide a complete translation file for every module.
 
-### File Naming
+### 📁 File Naming
 
 - **Components**: PascalCase (e.g., `TransactionTable.tsx`)
 - **Utilities/Services**: camelCase (e.g., `dateParser.ts`, `normalization.ts`)
@@ -140,7 +140,7 @@ astro dev logs     # View server logs
 - **Types**: camelCase with `.types.ts` suffix (e.g., `dashboard.types.ts`)
 - **Tests**: match the source file name with `.test.ts` suffix (e.g., `revolutParser.test.ts`)
 
-## Branch Naming
+## 🌿 Branch Naming
 
 Use descriptive names with a forward slash separator:
 
@@ -154,7 +154,7 @@ i18n/fr-translations
 
 Prefixes: `feat/`, `fix/`, `refactor/`, `docs/`, `i18n/`, `test/`, `chore/`.
 
-## Commit Messages
+## 💬 Commit Messages
 
 Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
@@ -170,7 +170,7 @@ test(revolut): add edge case tests for date parsing
 
 Types: `feat`, `fix`, `refactor`, `i18n`, `test`, `docs`, `chore`, `style`, `perf`.
 
-## Pull Request Process
+## 🔄 Pull Request Process
 
 1. **Create an issue first** for non-trivial changes. Discuss the approach before writing code.
 2. **Keep PRs small and focused.** A single PR should address one concern. If you find yourself fixing three things, split them.
@@ -180,14 +180,14 @@ Types: `feat`, `fix`, `refactor`, `i18n`, `test`, `docs`, `chore`, `style`, `per
 6. **Update documentation** if you change public APIs, add a new provider, or modify the architecture.
 7. **Request review** from at least one maintainer.
 
-## Code Review Expectations
+## 👀 Code Review Expectations
 
 - Reviewers will look for correctness, test coverage, adherence to existing patterns, and documentation.
 - Nitpicks about style are fine, but reviewers should focus on substance.
 - If a PR sits unreviewed for more than 3 business days, feel free to ping.
 - All review discussions should be respectful and constructive. "Why did you do it this way?" is always a welcome question.
 
-## Documentation Expectations
+## 📝 Documentation Expectations
 
 - **New features** must include inline documentation for non-obvious logic.
 - **New providers** must include sample CSV files and a description of the expected format.
@@ -196,11 +196,11 @@ Types: `feat`, `fix`, `refactor`, `i18n`, `test`, `docs`, `chore`, `style`, `per
 
 ---
 
-## Adding a New Bank Provider
+## 🏦 Adding a New Bank Provider
 
 One of the project's primary goals is to support banks from every country. This section explains how to add support for a new bank's CSV export format.
 
-### Architecture
+### 🏗️ Architecture
 
 Each provider follows a consistent pipeline:
 
@@ -228,7 +228,7 @@ src/core/config/csv-sources.ts     # Add your bank to CSV_SOURCES
 
 ### Step-by-step Guide
 
-#### 1. Add the CSV Source Definition
+#### 1. 📝 Add the CSV Source Definition
 
 Edit `src/core/config/csv-sources.ts`:
 
@@ -262,7 +262,7 @@ Add an entry to the `CSV_SOURCES` array:
 }
 ```
 
-#### 2. Create the Parser Service
+#### 2. 🔧 Create the Parser Service
 
 Create `src/modules/import-transactions/services/yourBankParser.ts`.
 
@@ -291,11 +291,11 @@ export function parseYourBankCsv(
 - **Generate stable IDs.** Each `Transaction` needs a deterministic `id`. Use the existing pattern of hashing relevant fields.
 - **Return warnings** for recoverable issues (missing optional fields, future dates, unusual amounts).
 
-#### 3. Wire It Up
+#### 3. 🔗 Wire It Up
 
 In the import flow integration point (currently in the CSV import store or a service registry), add a mapping from your provider ID to your parser function. The `ProviderSelect.tsx` component will automatically pick up your new provider from the `CSV_SOURCES` config if its status is `"available"` or `"coming-soon"`.
 
-#### 4. Provide Sample Data
+#### 4. 📊 Provide Sample Data
 
 If possible, create a sample CSV file at `public/sample-yourbank.csv` with anonymized data. This helps maintainers test and verify the parser.
 
@@ -307,7 +307,7 @@ export const SAMPLE_YOURBANK_CSV = `Date,Description,Amount
 ...`;
 ```
 
-#### 5. Write Tests
+#### 5. 🧪 Write Tests
 
 Create `src/modules/import-transactions/services/yourBankParser.test.ts` covering:
 
@@ -319,7 +319,7 @@ Create `src/modules/import-transactions/services/yourBankParser.test.ts` coverin
 
 Since the project currently has no test framework installed, add your tests using **vitest** — install it with `npm install -D vitest` and add a `test` script to `package.json`. Follow the patterns used by the existing Revolut parser when choosing test structure.
 
-#### 6. Include a Sample CSV File
+#### 6. 📄 Include a Sample CSV File
 
 Add an anonymized sample CSV to `public/sample-yourbank.csv`. This serves two purposes:
 
@@ -328,11 +328,11 @@ Add an anonymized sample CSV to `public/sample-yourbank.csv`. This serves two pu
 
 Make sure to anonymize all data — replace names, locations, and any identifying information.
 
-### Updating the Provider Registry
+### 🔄 Updating the Provider Registry
 
 After creating your parser, update `ImportMetadata` in `src/modules/import-transactions/domain/types.ts` if needed (the `provider` field may need widening from a union type). Submit a PR that includes all the changes above.
 
-### Why This Architecture?
+### 💡 Why This Architecture?
 
 Separating each provider into its own file with a clear interface means:
 
