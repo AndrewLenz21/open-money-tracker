@@ -8,7 +8,7 @@ import { ROUTES } from "@core/routing";
 import { resolveTranslation } from "@core/i18n";
 import { useAppLocale } from "../../providers";
 import { useAppTheme } from "../../providers";
-import { APP_THEMES } from "@shared/config/themes";
+import { APP_THEMES, DEFAULT_THEME } from "@shared/config/themes";
 import { FlagEN, FlagES } from "@shared/components/ui/flags";
 import { ThemePreview } from "../menus/ThemePreview";
 import { Drawer } from "../drawer/Drawer";
@@ -46,7 +46,7 @@ export function MobileDrawer({
   const t = (path: string): string => resolveTranslation(path, translations);
 
   const currentLocale = localeMounted ? locale : "en";
-  const currentTheme = themeMounted ? theme : "dark";
+  const currentTheme = themeMounted ? theme : DEFAULT_THEME;
   const dashboardHref = ROUTES.dashboard;
 
   const isDashboardActive =

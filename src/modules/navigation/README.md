@@ -55,4 +55,3 @@ The navbar includes a toggle button (left of the brand) that controls the deskto
 - Route detection uses `window.location.pathname` (not Astro router)
 - Locale change triggers full page reload
 - Theme preview colours are hardcoded duplicates of CSS variables
-- No sync between inline flash-prevention script and React theme provider
