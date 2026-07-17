@@ -1,6 +1,9 @@
 // ---------------------------------------------------------------------------
 // Theme hook — thin Zustand wrapper, drop-in replacement for React context.
-// Exposes theme, setTheme, and a mounted flag that reflects persist hydration.
+//
+// Static pages do not have a server-side user preference. The layout applies
+// the persisted theme before paint, and the store starts from the same value.
+// Components must read theme and setTheme from this hook only, not local state.
 // ---------------------------------------------------------------------------
 
 import { useCallback } from "react";
@@ -9,7 +12,6 @@ import { useThemeStore } from "../stores/themeStore";
 
 export function useAppTheme() {
   const theme = useThemeStore((s) => s.theme);
-  const mounted = useThemeStore((s) => s._hydrated);
   const setThemeStore = useThemeStore((s) => s.setTheme);
 
   const setTheme = useCallback(
@@ -17,5 +19,7 @@ export function useAppTheme() {
     [setThemeStore],
   );
 
-  return { theme, setTheme, mounted };
+  // mounted is kept for the old API. Theme initialization is synchronous now,
+  // so consumers can safely render the selected theme immediately.
+  return { theme, setTheme, mounted: true };
 }

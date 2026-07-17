@@ -20,6 +20,14 @@ const { locale = "en", title = "Open Money Tracker" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
+    <!--
+      Theme bootstrap for static pages.
+
+      This script runs before React hydrates and before the user sees the page.
+      It must read the same localStorage key and JSON shape as themeStore.ts,
+      then apply exactly one theme class to <html>. Do not duplicate this logic
+      in page components; React should only change themes through useAppTheme().
+    -->
     <script is:inline>
       (function() {
         try {
@@ -34,13 +42,17 @@ const { locale = "en", title = "Open Money Tracker" } = Astro.props;
           let theme = null;
           if (raw) {
             try {
+              // Current format: { state: { theme: "dark" }, version: 0 }
               const data = JSON.parse(raw);
               theme = data?.state?.theme;
             } catch {
+              // Legacy format: "dark"
               theme = raw;
             }
           }
           if (theme && ["light", "dark", "atom", "sky", "ocean", "pink"].includes(theme)) {
+            // Keep only one theme class so CSS variables always match the store.
+            document.documentElement.classList.remove("light", "dark", "atom", "sky", "ocean", "pink");
             document.documentElement.classList.add(theme);
           }
         } catch(e) {}
