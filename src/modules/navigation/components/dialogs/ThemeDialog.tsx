@@ -5,7 +5,7 @@
 
 import { Check } from "lucide-react";
 import { useAppTheme } from "../../providers";
-import { APP_THEMES, type AppTheme } from "@shared/config/themes";
+import { APP_THEMES, DEFAULT_THEME, type AppTheme } from "@shared/config/themes";
 import { resolveTranslation } from "@core/i18n";
 import { ThemePreview } from "../menus/ThemePreview";
 import { ModalShell } from "./ModalShell";
@@ -78,7 +78,7 @@ export function ThemeDialog({
   const { theme, setTheme, mounted } = useAppTheme();
 
   const t = (path: string): string => resolveTranslation(path, translations);
-  const currentTheme = mounted ? theme : "dark";
+  const currentTheme = mounted ? theme : DEFAULT_THEME;
 
   return (
     <ModalShell

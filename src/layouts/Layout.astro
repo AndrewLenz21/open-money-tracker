@@ -30,8 +30,17 @@ const { locale = "en", title = "Open Money Tracker" } = Astro.props;
             document.documentElement.lang = locale;
           }
 
-          const theme = localStorage.getItem("omt:theme");
-          if (theme && ["light", "dark", "atom", "sky", "ocean"].includes(theme)) {
+          const raw = localStorage.getItem("omt:theme");
+          let theme = null;
+          if (raw) {
+            try {
+              const data = JSON.parse(raw);
+              theme = data?.state?.theme;
+            } catch {
+              theme = raw;
+            }
+          }
+          if (theme && ["light", "dark", "atom", "sky", "ocean", "pink"].includes(theme)) {
             document.documentElement.classList.add(theme);
           }
         } catch(e) {}
